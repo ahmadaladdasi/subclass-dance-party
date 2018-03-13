@@ -5,23 +5,53 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  /* The image used */
+  background-image: url("images/scottish-coastline.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
+.title, .addDancerButton, .lineUp, .interact{
   padding:5px 12px;
   float:right;
 }
+
 .topbar{
   height:32px;
   background-color: #555;
+  width:auto;
 }
 .title{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  position:absolute;
+}
+.BlinkyDancer{
+  background-image: url("images/snoopy.png");
+  position:absolute;
+  display: block;
+  height: 90px;
+  width: 70px;
+}
+.GrowingDancer{
+  border:10px solid blue;
   border-radius:10px;
   position:absolute;
+}
+
+.WalkingDancer{
+  background-image: url("images/sheep.png");
+  position:absolute;
+  display: block;
+  height: 90px;
+  width: 90px;
 }
