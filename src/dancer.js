@@ -3,8 +3,6 @@ var MakeDancer = function(top, left, timeBetweenSteps) {
   // use jQuery to create an HTML <span> tag
   if (this instanceof MakeBlinkyDancer) {
     this.$node = $('<span class="dancer"><span class="BlinkyDancer"></span></span>');
-  } else if (this instanceof MakeGrowingDancer) {
-    this.$node = $('<span class="dancer"><span class="GrowingDancer"></span></span>');
   } else if (this instanceof MakeWalkingDancer) {
     this.$node = $('<span class="dancer"><span class="WalkingDancer"></span></span>');
   } else {
@@ -62,6 +60,12 @@ var MakeDancer = function(top, left, timeBetweenSteps) {
     // Use css top and left properties to position our <span> tag
     // where it belongs on the page. See http://api.jquery.com/css/
     //
-    console.log('flipping now');
     this.$node.css("transform","rotate(180deg)");
+  };
+
+  MakeDancer.prototype.jump = function(node) {
+    // Use css top and left properties to position our <span> tag
+    // where it belongs on the page. See http://api.jquery.com/css/
+    //
+    this.$node.css("transform","translate(0px, -30px)");
   };

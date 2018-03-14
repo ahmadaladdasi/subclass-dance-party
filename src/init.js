@@ -21,13 +21,7 @@ $(document).ready(function() {
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
-    if (dancerMakerFunctionName == 'MakeGrowingDancer') {
-      var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
-      Math.random() * 1000
-      );
-    } else if (dancerMakerFunctionName == 'MakeBlinkyDancer') {
+    if (dancerMakerFunctionName == 'MakeBlinkyDancer') {
       var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
@@ -50,7 +44,6 @@ $(document).ready(function() {
       }
   });
   $('.interact').on('click', function(event) {
-      console.log('button is working');
       for (var i = 0; i < window.dancers.length; i++) {
         var firstTop = window.dancers[i].top;
         var firstLeft = window.dancers[i].left;
@@ -62,6 +55,11 @@ $(document).ready(function() {
             window.dancers[j].flip(window.dancers[j].$node);
           }
         }
+      }
+  });
+  $(this).on('click', '.dancer', function(event) {
+      for (var i = 0; i < window.dancers.length; i++) {
+        window.dancers[i].jump(window.dancers[i].$node);
       }
   });
 });
